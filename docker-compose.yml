@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes: 
-      - /home/apps/flask-playground:/home/apps/flask-playground
+      - shared_data:/home/apps/flask-playground
   server:
     container_name: nginx_server
     build: 
@@ -16,6 +16,14 @@ services:
     depends_on:
       - web
     volumes:
-      - /home/apps/flask-playground:/home/apps/flask-playground
+      - shared_data:/home/apps/flask-playground
     ports:
       - 80:80
+
+volumes:
+  shared_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/apps/flask-playground'
