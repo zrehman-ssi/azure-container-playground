@@ -1,5 +1,5 @@
 FROM nginx:latest
 
-COPY ./auzre-container-playground /etc/nginx/sites-available/
+COPY ./azure-container-playground /etc/nginx/sites-available/
 
-RUN ln -s /etc/nginx/sites-available/auzre-container-playground /etc/nginx/sites-enabled
+RUN ln -s /etc/nginx/sites-available/azure-container-playground /etc/nginx/sites-enabled
