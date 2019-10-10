@@ -8,4 +8,4 @@ RUN python -m venv venv && venv/bin/pip install -r requirements.txt
 
 COPY ./auzre-cotainer-playground.service /etc/systemd/system/
 
-ENTRYPOINT service start azure-cotainer-playground && enable
+ENTRYPOINT service start azure-container-playground && enable

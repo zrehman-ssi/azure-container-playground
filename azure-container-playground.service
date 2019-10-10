@@ -3,7 +3,7 @@ Description=uWSGI instance to serve azure-container-playground
 After=network.target
 
 [Service]
-User=sammy
+User=root
 Group=www-data
 WorkingDirectory=/home/apps/flask-playground
 Environment="PATH=/home/apps/flask-playground/venv/bin"
