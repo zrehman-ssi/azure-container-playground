@@ -6,10 +6,8 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile
-    networks:
-      my-network:
-        aliases:
-          - flask-app
+    volumes: 
+      - /home/apps/flask-playground:/home/apps/flask-playground
   server:
     container_name: nginx_server
     build: 
@@ -17,10 +15,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - web
+    volumes:
+      - /home/apps/flask-playground:/home/apps/flask-playground
     ports:
       - 80:80
-    networks:
-      - my-network
-      
-networks:
-  my-network:
