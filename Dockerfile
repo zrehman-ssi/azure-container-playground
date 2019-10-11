@@ -1,5 +1,7 @@
 FROM tiangolo/uwsgi-nginx-flask:python:3.7
 
+ENV UWSGI_INI=./app.ini
+
 COPY . /home/apps/flask-playground
 
 WORKDIR /home/apps/flask-playground
