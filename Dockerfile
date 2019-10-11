@@ -1,4 +1,4 @@
-FROM tiangolo/uwsgi-nginx-flask:python:3.7
+FROM tiangolo/uwsgi-nginx-flask:python3.7
 
 ENV UWSGI_INI=./app.ini
 
