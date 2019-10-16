@@ -19,6 +19,7 @@ pipeline{
         }
         stage("Run Image"){
             steps{
+                sh "docker stop azure-container-instance"
                 sh "docker rm azure-container-instance"
                 sh "docker run -d -p 80:80 --name azure-container-instance azure-container-image"
             }
